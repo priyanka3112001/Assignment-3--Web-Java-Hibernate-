@@ -1,0 +1,61 @@
+
+
+<hibernate-mapping>
+    <class name="example.hibernate.entity.Author" table="Author_Master">
+        <id name="id" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="name" type="string"/>
+        <property name="dob" type="date"/>
+        <property name="country" type="string"/>
+        <set name="books" table="book" cascade="all">
+            <key column="author_id"/>
+            <one-to-many class="example.hibernate.entity.Book"/>
+        </set>
+    </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "example.hibernate.entity.Author" table = "Author_Master">
+      <id name = "authorId" type = "int" column = "Author_Id"/>         
+      <property name = "name" column = "Author_Name" type = "String"/>
+      <property name = "dob" column = "Author_Dob" type = "LocalDate"/> 
+      <property name = "country" column = "Author_Country" type = "String"/> 
+   </class>
+</hibernate-mapping>-->
